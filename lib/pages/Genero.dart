@@ -1,14 +1,14 @@
-
+// ignore: file_names
 import 'package:flutter/material.dart';
 
-class MyWidget extends StatefulWidget {
-  const MyWidget({super.key});
+class Genero extends StatefulWidget {
+  const Genero({super.key});
 
   @override
-  State<MyWidget> createState() => _MyWidgetState();
+  State<Genero> createState() => _GeneroState();
 }
 
-class _MyWidgetState extends State<MyWidget> {
+class _GeneroState extends State<Genero> {
   @override
   Widget build(BuildContext context) {
     return Column(
