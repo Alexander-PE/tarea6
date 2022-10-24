@@ -39,19 +39,19 @@ class _GeneroState extends State<Genero> {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
 
           FractionalTranslation(
             translation: const Offset(0, 0),
             child: SizedBox(
-              width: 100,
-              height: 100,
+              width: 110,
+              height: 110,
               child: Container(
                 height:  1,
                 width: 1,
-                child:  ColoredBox(color: colorr),
+                margin: const EdgeInsets.symmetric(vertical: 10),
+                child: ColoredBox(color: colorr),
               )
             ),
           ),
