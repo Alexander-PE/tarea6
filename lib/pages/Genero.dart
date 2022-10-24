@@ -1,7 +1,5 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
-import 'dart:convert';
-import 'package:http/http.dart' as http; 
 import 'package:dio/dio.dart';
 
 class Genero extends StatefulWidget {
@@ -19,7 +17,7 @@ class _GeneroState extends State<Genero> {
   var colorr = Colors.white;
 
 
-  Future<void> getPeople(String nombre) async {
+  Future<void> getGender(String nombre) async {
     try {
       var response = await Dio().get('https://api.genderize.io/?name=$nombre');
       gen = response.data['gender'];
@@ -63,7 +61,7 @@ class _GeneroState extends State<Genero> {
           
           MaterialButton(
             onPressed: () async{
-              await getPeople(_textController.text);
+              await getGender(_textController.text);
               setState(() {});
             },
             color: Colors.blue,

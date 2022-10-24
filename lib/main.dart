@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tarea6/pages/Edad.dart';
 import 'package:tarea6/pages/Genero.dart';
 
 void main() {
@@ -16,7 +17,8 @@ class _MyAppState extends State<MyApp> {
   
   int page = 0;
   List paginas = const [
-    Genero()
+    Genero(),
+    Edad()
   ];
 
   @override
@@ -39,7 +41,7 @@ class _MyAppState extends State<MyApp> {
                   page=1;
                 });
               },),
-              ListTile(title: const Text("Momentos"), onTap: (){
+              ListTile(title: const Text("Edad/Etapa"), onTap: (){
                 setState(() {
                   page=2;
                 });
