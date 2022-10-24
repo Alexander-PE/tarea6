@@ -17,7 +17,6 @@ class _EdadState extends State<Edad> {
   var etapa ="";
   var colorr = Colors.white;
   var imagen = "assets/images/White_full.png";
-  String joven = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngwing.com%2Fes%2Fsearch%3Fq%3Djoven&psig=AOvVaw0BXk7hTw55lKrhJ5YtfTtc&ust=1666730654940000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCOj6wdbd-foCFQAAAAAdAAAAABAE";
 
   Future<void> getAge(String nombre) async {
     try {
