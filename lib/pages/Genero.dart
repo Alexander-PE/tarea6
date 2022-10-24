@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http; 
+import 'package:dio/dio.dart';
 
 class Genero extends StatefulWidget {
   const Genero({super.key});
@@ -14,24 +15,24 @@ class _GeneroState extends State<Genero> {
 
   final _textController = TextEditingController();
 
-  List persona = [];
-
-  String name = "";
-  static const man = TextStyle(color: Colors.blue);
-  static const woman = TextStyle(color: Colors.pink);
+  var gen = "";
+  var colorr = Colors.white;
 
 
-  Future<void> _fetchData(String nombre) async {
-    String apiUrl = 'https://api.genderize.io/?name=$nombre';
-
-    final response = await http.get(Uri.parse(apiUrl));
-    final data = json.decode(response.body);
-
-    setState(() {
-      persona = data;
-    });
+  Future<void> getPeople(String nombre) async {
+    try {
+      var response = await Dio().get('https://api.genderize.io/?name=$nombre');
+      gen = response.data['gender'];
+      if(gen == "male"){
+        colorr = Colors.blue;
+      }else{
+        colorr = Colors.pink;
+      }
+      // print(response.data['gender']);
+    } catch (e) {
+      print(e);
+    }
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -42,22 +43,28 @@ class _GeneroState extends State<Genero> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
 
-          Expanded(child: Container(
-            child: Center(
-              child: Text(name, style: const TextStyle(fontSize: 50),)
+          FractionalTranslation(
+            translation: const Offset(0, 0),
+            child: SizedBox(
+              width: 100,
+              height: 100,
+              child: Container(
+                height:  1,
+                width: 1,
+                child:  ColoredBox(color: colorr),
+              )
             ),
-          )),
+          ),
 
           TextField(
             controller: _textController,
             decoration: const InputDecoration(hintText: 'Inserte un nombre' ,border: OutlineInputBorder())
           ),
+          
           MaterialButton(
-            onPressed: () {
-              setState(() {
-                name = _textController.text;
-                _fetchData(name);
-              });
+            onPressed: () async{
+              await getPeople(_textController.text);
+              setState(() {});
             },
             color: Colors.blue,
             child: const Text("Identificar", style: TextStyle(color: Colors.white),),
