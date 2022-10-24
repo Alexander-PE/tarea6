@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tarea6/pages/Genero.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +16,7 @@ class _MyAppState extends State<MyApp> {
   
   int page = 0;
   List paginas = const [
+    Genero()
   ];
 
   @override
