@@ -3,7 +3,7 @@ import 'package:tarea6/pages/Clima.dart';
 import 'package:tarea6/pages/Edad.dart';
 import 'package:tarea6/pages/Genero.dart';
 import 'package:tarea6/pages/Universidad.dart';
-import 'package:tarea6/pages/About.dart';
+import 'package:tarea6/pages/contratame.dart';
 
 void main() {
   runApp(const MyApp());
