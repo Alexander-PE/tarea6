@@ -37,7 +37,7 @@ class _GeneroState extends State<Genero> {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
 
           FractionalTranslation(
