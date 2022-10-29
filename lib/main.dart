@@ -37,34 +37,29 @@ class _MyAppState extends State<MyApp> {
           child: ListView(
             padding: const EdgeInsets.only(top: 40),
             children:  [
-              ListTile(title: const Text("Portada"), onTap: (){
+              ListTile(title: const Text("Nombre/Genero"), onTap: (){
                 setState(() {
                   page=0;
                 });
               },),
-              ListTile(title: const Text("Nombre/Genero"), onTap: (){
+              ListTile(title: const Text("Edad/Etapa"), onTap: (){
                 setState(() {
                   page=1;
                 });
               },),
-              ListTile(title: const Text("Edad/Etapa"), onTap: (){
+              ListTile(title: const Text("Universidad"), onTap: (){
                 setState(() {
                   page=2;
                 });
               },),
-              ListTile(title: const Text("Universidad"), onTap: (){
+              ListTile(title: const Text("Clima"), onTap: (){
                 setState(() {
                   page=3;
                 });
               },),
-              ListTile(title: const Text("Clima"), onTap: (){
-                setState(() {
-                  page=4;
-                });
-              },),
               ListTile(title: const Text("Acerca de"), onTap: (){
                 setState(() {
-                  page=5;
+                  page=4;
                 });
               },)
           ],),
